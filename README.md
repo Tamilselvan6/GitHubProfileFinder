@@ -56,6 +56,7 @@ Try the application live here: [GitHub Profile Finder](https://tamilselvan6.gith
 - View the user’s profile details and repositories.
 - Click on the "Show More..." link to display additional repositories or "Show Less..." to collapse them.
 - Use the "View Creator Profile" button to access the app creator's GitHub profile.
+- Reads the username parameter from the URL on page load to display the relevant profile.
 
 ## API Endpoints
 - Get User Info: `https://api.github.com/users/{username}`
