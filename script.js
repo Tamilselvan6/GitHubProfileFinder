@@ -80,6 +80,7 @@ const getUser = async (username) => {
     const { data } = await axios(API_URL + username);
     createUserCard(data);
     getRepos(username);
+    window.history.pushState({}, "", `?username=${username}`);
   } catch (error) {
     if (error.response && error.response.status === 404) {
       createErrorCard("No profile found with this username");
@@ -113,3 +114,10 @@ searchForm.addEventListener("submit", (event) => {
     searchInput.value = "";
   }
 });
+
+const urlParams = new URLSearchParams(window.location.search);
+const username = urlParams.get("username");
+if (username) {
+  getUser(username);
+}
+
